@@ -1,0 +1,32 @@
+{
+  "name": "personal-website",
+  "version": "1.0.0",
+  "description": "Source code for my personal website",
+  "main": "js/scripts.js",
+  "scripts": {
+    "watch": "gulp watch"
+  },
+  "author": "Hong Jie Yang",
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-wait": "0.0.2",
+    "sass": "^1.49.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HongJieYang/HongJieYang.github.io.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HongJieYang/HongJieYang.github.io/issues"
+  },
+  "homepage": "https://github.com/HongJieYang/HongJieYang.github.io#readme"
+}

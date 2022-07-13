@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+    <html class="no-js" lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Hong Jie Yang Portfolio</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+        <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <!-- mobile-menu-toggle -->
+        <div id="mobile-menu-open" class="shadow-large">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+        
+        <!-- header -->
+        <header class="sticky" id="nav-header">
+            <div id="mobile-menu-close">
+                <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <ul id="menu" class="shadow">
+                <li>
+                    <a href="#intro">Intro</a>
+                </li>
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+        </header>
+        <!-- End of Header -->
+        
+        <!-- Lead Title Page -->
+        <div id="lead">
+
+            <!-- Lead Content -->
+            <div id="lead-content">
+                <h1>Hong Jie Yang</h1>
+                <h2>Software Developer</h2>
+                <a href="images/HongJieYangResume.pdf" download="" class="btn-rounded-white">Download Resume</a>
+            </div>
+
+            <div id="lead-overlay"></div>
+
+            <!-- Lead Down -->
+            <div id="lead-down">
+                <span>
+                    <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                </span>
+            </div>
+
+        </div>
+        <!-- End of Lead Title Page -->
+
+        <!-- Introduction Section -->
+        <div id="intro">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="heading">Introduction</h2>
+                    </div>
+                    <div class="col-md-8">
+                        <p>
+                            Welcome to my website portfolio. I'm a recent graduate who has applied knowledge
+                            gained from my education into practical projects showcased via this website.
+                            
+                            <br></br>
+                            My main programming language of choice is Python. 
+                            I have familarized myself with CSS, HTML,
+                            Javascript for designing front-end applications. Finally, I am proficient in data extraction,
+                            modelling and classification, especially for the development of machine learning models. 
+
+                            <br></br>
+                            If you have any inquries you can contact me at <b>HongJYang9403@gmail.com</b> or use the contact form below.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Introduction Section -->
+
+        <!-- Education Section -->
+        <div id="education">
+            <h2 class="heading">Education</h2>
+            <div class="education-block">
+                <h3><b>McMaster University</b></h3>
+                <span class="education-date">2016 - 2021</span>
+                <h4><b>Bachelor of Engineering (BEng) in Electrical and Biomedical Engineering</b><p>Minor in Computer Science. Graduated with Distinction (3.87 / 4.00 GPA)</p></h4>
+                <h4><b>Relevant Coursework</b></h4>
+                <ul>
+                    <li>Introduction to Machine Learning (A+)</li>
+                    <li>Human Computer Interfaces (A+)</li>
+                    <li>Linear and Continuous Optimization (A+)</li>
+                </ul>
+            </div>
+        </div>
+        <!-- End of Education Section -->
+        
+        <!-- Lightbox Gallery -->
+        <!-- Modified from https://www.w3schools.com/howto/howto_js_lightbox.asp -->
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            
+            <!-- Images for Lightbox Gallery -->
+            <div class="modal-content">
+                <div id="gallery1">
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 4</div>
+                        <img src="images/gallery1/thumb1.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 4</div>
+                        <img src="images/gallery1/thumb2.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 4</div>
+                        <img src="images/gallery1/thumb3.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 4</div>
+                        <img src="images/gallery1/thumb4.png" style="width:100%">
+                    </div>
+                </div>
+
+                <div id="gallery2">
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="images/gallery2/article.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="images/gallery2/full.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="images/gallery2/business.png" style="width:100%">
+                    </div>
+                </div>
+
+                <div id="gallery3">
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 3</div>
+                        <img src="images/gallery3/segmented_data.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 3</div>
+                        <img src="images/gallery3/raw_data.png" style="width:100%">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 3</div>
+                        <img src="images/gallery3/processed_data.png" style="width:100%">
+                    </div>
+                </div>
+
+                <!-- Next / Previous Controls -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <!-- Caption Text -->
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+    
+                <!-- Thumbnail Controls Project 1 -->
+                <div id="thumbnailSlides1" class="thumbnails">
+                    <div class="column">
+                        <img class="demo" src="images/gallery1/thumb1.png" onclick="currentSlide(1)" alt="My Face Happy">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo" src="images/gallery1/thumb2.png" onclick="currentSlide(2)" alt="My Face Suprised">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo" src="images/gallery1/thumb3.png" onclick="currentSlide(3)" alt="Image of Elon Musk (Happy)">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo" src="images/gallery1/thumb4.png" onclick="currentSlide(4)" alt="Image of Kristen Stewart (Mad)">
+                    </div>
+                </div>
+
+                <!-- Thumbnail Controls Project 2 -->
+                <div id="thumbnailSlides2" class="thumbnails">
+                    <div class="column">
+                        <img class="demo" src="images/gallery2/article.png" onclick="currentSlide(1)" alt="Article Selected">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo" src="images/gallery2/full.png" onclick="currentSlide(2)" alt="Full List of Articles from CBC">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo" src="images/gallery2/business.png" onclick="currentSlide(3)" alt="Filtered List of Business Articles from CBC">
+                    </div>
+                </div>
+
+                <!-- Thumbnail Controls Project 3 -->
+                <div id="thumbnailSlides3" class="thumbnails">
+                    <div class="column">
+                        <img class="demo" src="images/gallery3/segmented_data.png" onclick="currentSlide(1)" alt="Image of Segmented SCG and ECG Waveform">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo" src="images/gallery3/raw_data.png" onclick="currentSlide(2)" alt="Raw Data of SCG and ECG Waveform Before Processing">
+                    </div>
+
+                    <div class="column">
+                        <img class="demo" src="images/gallery3/processed_data.png" onclick="currentSlide(3)" alt="Processed Data of SCG and ECG Waveform">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Lighbox Gallery -->
+
+        <!-- Project Section -->
+        <div id="projects" class="project">
+            <h2 class="heading">Projects</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="project shadow-large">
+
+                        <!-- Image -->
+                        <div class="project-image">
+                            <img src="images/gallery1/thumb1.png" width="480" height="360" onclick="openModal(1)"/>
+                        </div>
+
+                        <!-- Project Information -->
+                        <div class="project-info">
+                            <h3>Age, Gender, and Emotion Predictor</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>Keras</li>
+                                <li>OpenCV</li>
+                            </ul>
+                            <p>
+                                This application is a real-time webcam predictor for age, gender, and emotions. It leverages existing neural network architecture Vgg16 to 
+                                achieve accuracies of 78.77% (96.01% one off accuracy) for age, 94.85% for gender, and 64.44% for emotions.
+                            </p>
+                            <a href="https://github.com/HongJieYang/AgeGenderEmotionDetector" target="_blank">View Source Code</a>
+                        </div>
+                    </div>
+
+                    <div class="project shadow-large">
+
+                        <!-- Image -->
+                        <div class="project-image">
+                            <img src="images/gallery2/article.png" width="480" height="360" class="thumb2" onclick="openModal(2)"/>
+                        </div>
+
+                        <!-- Project Information -->
+                        <div class="project-info">
+                            <h3>Article Summarizer Application</h3>
+                            <ul>
+                                <li>Python</li>
+                                <li>scikit-learn</li>
+                                <li>NLTK</li>
+                                <li>Dash Plotly</li>
+                                <li>Beautiful Soup</li>
+                            </ul>
+                            <p>
+                                This application scrapes the frontpage of CBC, The Guardian, NBS, and CBS for articles. It then provides a summary of the article using an 
+                                extractive algorithm alongside a list of corresponding keywords. Furthermore, you can filter the articles based on 5 different categories.
+                            </p>
+                            <a href="https://github.com/HongJieYang/ArticleSummarizerApplication" target="_blank">View Source Code</a>
+                        </div>
+                    </div>
+
+                    <div class="project shadow-large">
+
+                        <!-- Image -->
+                        <div class="project-image">
+                            <img src="images/gallery3/segmented_data.png" width="480" height="360" class="thumb3" onclick="openModal(3)"/>
+                        </div>
+
+                        <!-- Project Information -->
+                        <div class="project-info">
+                            <h3>Electrocardiography and Seismocardiography Analyzer</h3>
+                            <ul>
+                                <li>Matlab</li>
+                                <li>Embedded C</li>
+                            </ul>
+                            <p>
+                                This application is my capstone project, where alongside two other students was aimed to design a cheap, non-invasive method of detecting 
+                                ischemia (heart irregularities). I oversaw the data processing, feature extraction, and user interface parts of the project.
+                            </p>
+                            <a href="https://github.com/HongJieYang/ECG-SCG-Analyzer" target="_blank">View Source Code</a>
+                        </div>
+                    </div>
+
+                    <div class="project shadow-large">
+
+                        <!-- Image -->
+                        <div class="project-image">
+                            <img src="images/gallery4/lead.png" width="480" height="360" class="thumb4"/>
+                        </div>
+                        
+                        <!-- Project Information -->
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>SASS</li>
+                                <li>Javscript</li>
+                                <li>jQuery</li>
+                            </ul>
+                            <p>
+                                This is the source code for this website. 
+                                This website designed using HTML, CSS, Javascript, jQuery and is used to display of my completed projects. 
+                            </p>
+                            <a href="https://github.com/HongJieYang/PortfolioWebsite" target="_blank">View Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Project Section -->
+
+        <!-- Skills Section -->
+        <div id="skills">
+            <h2 class="heading">Skills</h2>
+            <ul>
+                <li>JavaScript</li>
+                <li>Java</li>
+                <li>Embedded C</li>
+                <li>MATLAB</li>
+                <li>MySQL</li>
+                <li>Python</li>
+                <li>jQuery</li>
+                <li>OpenCV</li>
+                <li>Keras</li>
+                <li>Dash Plotly</li> 
+                <li>Beautiful Soup</li>
+            </ul>
+        </div>
+        <!-- End of Skills Section -->
+
+        <!-- Contact Section -->
+        <div id="contact">
+            <h2>Contact Me</h2>
+            <div id="contact-form">
+                <form method="POST" action="https://formspree.io/f/xlezlepe">
+                    <input type="hidden" name="_subject" value="Contact request from personal website" />
+                    <input type="email" name="_replyto" placeholder="Your email" required>
+                    <textarea name="message" placeholder="Your message" required></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+        <!-- End of Contact Section -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-5 copyright">
+                        <p>
+                            Copyright &copy; <span id="current-year"></span> Hong Jie Yang
+                        </p>
+                    </div>
+                    <div class="col-sm-2 top">
+                        <span id="to-top">
+                            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <div class="col-sm-5 social">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/HongJieYang" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/in/HongJYang940f" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+        <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

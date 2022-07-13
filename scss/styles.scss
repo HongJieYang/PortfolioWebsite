@@ -1,0 +1,962 @@
+/*
+    ---------------------------------------------------
+    -------------------- Variables --------------------
+    ---------------------------------------------------
+*/
+
+// Define base and accent colors
+$base-color: #2a5c7e;
+$base-color-hover: darken($base-color, 10%);
+$header-color: #fff;
+$project-color: #f2f2f5;
+$border: #dcd9d9;
+
+// Define text colors
+$heading: #374054;
+$text: #74808a;
+
+/*
+    ---------------------------------------------------
+    --------------------- Mixins ----------------------
+    ---------------------------------------------------
+*/
+
+@mixin transition($duration: 0.5s, $func: ease, $property: all) {
+    transition: #{$duration} #{$func} #{$property};
+}
+
+@mixin placeholder {
+
+    &::-webkit-input-placeholder { // Chrome/Opera/Safari
+        color: white;
+    }
+
+    &:-moz-placeholder { // Firefox 18-
+        color: white;
+        opacity: 1;
+    }
+
+    &::-moz-placeholder { // Firefox 19+
+        color: white;
+        opacity: 1;
+    }
+
+    &:-ms-input-placeholder { // 
+        color: white;
+    }
+}
+
+/*
+    ---------------------------------------------------
+    ----------------- Global Styles -------------------
+    ---------------------------------------------------
+*/
+
+// Body Font
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+
+    &.active {
+        overflow: hidden;
+        z-index: -1;
+    }
+}
+
+// Navigation Header
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center; // Center
+    z-index: 10; // Front 
+
+    ul { 
+        display: inline-block;
+        background: $header-color;
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        display: block;
+        color: $base-color;
+        padding: 10px;
+
+        // Styling for hovering
+        &:hover {
+            color: $base-color-hover;
+            text-decoration: none;
+            background: rgb(204, 204, 204);
+            border-radius: 10px;
+        }
+
+        // Styling after
+        &:focus {
+            color: $base-color;
+            text-decoration: none;
+        }
+    }
+
+    &.clicked {
+        display: block;
+    }
+
+    &.sticky {
+        position: fixed;
+        z-index: 999;
+    }
+}
+
+#mobile-menu-open {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    right: 15px;
+    top: 10px;
+    color: $base-color;
+    font-size: 1.5em;
+    z-index: 20;
+    padding: 0 7px;
+    border-radius: 4px;
+    background: $header-color;
+}
+
+#mobile-menu-close {
+    display: none;
+    text-align: right;
+    width: 100%;
+    background: $header-color;
+    font-size: 1.5em;
+    padding-right: 15px;
+    padding-top: 10px;
+    cursor: pointer;
+    color: $base-color;
+
+    span {
+        font-size: 0.5em;
+        text-transform: uppercase;
+    }
+
+    i {
+        vertical-align: middle;
+    }
+}
+
+footer {
+    padding: 50px 0;
+    background-color: $base-color;
+}
+
+.copyright {
+    padding-top: 20px;
+
+    p {
+        margin: 0;
+        color: white;
+    }
+}
+
+.top {
+    text-align: center;
+
+    span {
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        width: 45px;
+        height: 45px;
+        border-radius: 30%;
+        border: 3px solid lighten($text, 25%);
+        text-align:center;
+    }
+
+    i {
+        color: white;
+        margin: 10px auto;
+    }
+}
+
+.social {
+    text-align: right;
+        
+    ul {
+        margin: 5px 0 0 0;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        font-size: 1.25em;
+        list-style: none;
+    }
+
+    a {
+        display: block;
+        color: white;
+        padding: 10px;
+
+        &:hover {
+            color: $base-color;
+        }
+    }
+}
+
+.btn-rounded-white {
+    display: inline-block;
+    color: #fff;
+    padding: 15px 25px;
+    border: 4px solid #fff;
+    border-radius: 25px;
+    font-size: 1.2em;
+    font-weight: 400;
+    
+    @include transition();
+
+    &:hover {
+        color: $base-color;
+        background: #fff;
+        text-decoration: none;
+    }
+}
+
+.shadow {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.shadow-large {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.heading {
+    position: relative;
+    display: inline-block;
+    font-size: 2em;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+
+    &:after {
+        position: absolute;
+        content: '';
+        top: 100%;
+        height: 2px;
+        width: 75px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background: $base-color;
+    }
+}
+
+.project {
+    background: $project-color;
+}
+
+/*
+    ---------------------------------------------------
+    ------------------ Lead Styles --------------------
+    ---------------------------------------------------
+*/
+
+#lead {
+    position: relative;
+    height: 100vh;
+    min-height: 500px;
+    max-height: 1080px;
+    background: url(../images/bg.avif);
+    background-size: cover;
+    overflow: hidden;
+}
+
+#lead-content {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    h1, h2 {
+        margin: 0;
+    }
+
+    h1 {
+        color: #fff;
+        font-weight: 900;
+        font-size: 5em;
+        letter-spacing: 0.05em;
+        line-height: 0.9em;
+    }
+
+    h2 {
+        color: lighten($base-color, 25%);
+        font-weight: 700;
+        font-size: 2.25em;
+        margin-bottom: 15px;
+    }
+}
+
+// Color Tint
+#lead-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba($base-color-hover, 0.8);
+    z-index: 1;
+}
+
+// Pulsating animation
+@keyframes pulsate {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+#lead-down {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    bottom: 15px;
+    color: #fff;
+
+    span {
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+        width: 45px;
+        height: 45px;
+        border-radius: 30%;
+        border: 3px solid lighten($base-color, 50%);
+        text-align:center;
+    }
+
+    i {
+        animation: pulsate 1.5s ease;
+        animation-iteration-count: infinite;
+        padding-top: 10px;;
+    }
+}
+
+
+/*
+    ---------------------------------------------------
+    -------------- Introduction Styles ----------------
+    ---------------------------------------------------
+*/
+
+#intro {
+    padding: 75px 15px;
+    border-bottom: 1px solid $border;
+
+    h2 {
+        color: $heading;
+    }
+
+    p {
+        color: $text;
+        margin: 0;
+    }
+}
+
+
+/*
+    ---------------------------------------------------
+    -------------- Education Styles -------------------
+    ---------------------------------------------------
+*/
+
+#education {
+    padding: 50px 15px 20px 15px;
+    border-bottom: 1px solid $border;
+    text-align: center;
+    background-color: #f2f2f5;
+
+    h2 {
+        color: $heading;
+        margin-bottom: 50px;
+    }
+}
+
+.education-block {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    padding: 15px;
+    border: 1px solid $border;
+    text-align: left;
+    background-color: $header-color;
+
+    h3 {
+        font-weight: 500;
+        float: left;
+        margin: 0;
+        color: $heading;
+    }
+
+    span {
+        color: $text;
+        float: right;
+    }
+
+    h4 {
+        color: $text;
+        clear: both;
+        font-weight: 500;
+        margin: 0 0 15px 0;
+    }
+
+    p, ul {
+        margin: 0;
+        color: $text;
+        font-size: 0.9em;
+    }
+
+    ul {
+        padding: 0 0 0 15px;
+    }
+}
+
+/*
+    ---------------------------------------------------
+    ----------------- Project Styles ------------------
+    ---------------------------------------------------
+*/
+
+.row > .column {
+    padding: 0 8px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.925);
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 52vw;
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Caption text */
+.caption-container {
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+}
+
+img.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
+img.hover-shadow {
+    transition: 0.3s;
+}
+
+.hover-shadow:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+// Project Thumbnails
+.thumb2{
+    object-fit: contain;
+    background-color: #212529
+}
+
+.thumb3{
+    object-fit: contain;
+    background-color: rgba(207, 207, 207, 0.76);
+}
+
+.thumb4{
+    object-fit: contain;
+    background-color: rgb(245, 245, 245);
+}
+
+// Thumbnail gallery
+#thumbnailSlides1 {
+    display: none;
+
+    // 4 Columns next to each other
+    .column {
+        float: left;
+        width: 25%;
+    }
+
+    .demo {
+        max-width: 100%;
+    }
+
+}
+
+#thumbnailSlides2 {
+    display: none;
+
+    // 4 Columns next to each other
+    .column {
+        float: left;
+        width: 33.33%;
+    }
+    
+    .demo {
+        max-width: 100%;
+    }
+}
+
+#thumbnailSlides3 {
+    display: none;
+
+    // 3 Columns next to each other
+    .column {
+        float: left;
+        width: 33.33%;
+    }
+
+    .demo {
+        max-width: 100%;
+    }
+}
+
+#thumbnailSlides4 {
+    display: none;
+
+    .demo {
+        max-width: 100%;
+    }
+
+    // 3 Columns next to each other
+    .column {
+        float: left;
+        width: 33.33%;
+    }
+}
+
+
+#projects {
+    padding: 50px 15px;
+    border-bottom: 1px solid $border;
+    text-align: center;
+
+    h2 {
+        color: $heading;
+        margin-bottom: 50px;
+    }
+}
+
+.project {
+    position: relative;
+    max-width: 1500px;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 4px;
+    
+    ul {
+        display: block;
+        margin: 10px auto;
+        padding: 0;
+        max-width: 1500px;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0px 1px;
+        padding: 5px 10px;
+        color: $heading;
+        background: darken($project-color, 5%);
+        list-style: none;
+        cursor: default;
+        font-size: 1em;
+    }
+    
+}
+
+.project-image {
+    float: left;
+
+    
+    &:hover{ 
+        animation: pulse 1s infinite;
+        animation-timing-function: linear;   
+    }
+      
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
+    }
+}
+
+.project-info {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 500px;
+    padding: 15px;
+    overflow: auto;
+    max-height: 100%;
+
+    h3 {
+        font-size: 1.5em;
+        font-weight: 500;
+        color: $heading;
+        margin: 0 0 0 0;
+    }
+
+    p {
+        color: $text;
+        margin: 0 0 15px 0;
+        font-size: 0.9em;
+    }
+}
+
+.no-image {
+    .project-info {
+        position: relative;
+        margin: 0;
+        padding: 30px 15px;
+        transform: none;
+    }
+}
+
+#more-projects {
+    display: none;
+}
+
+/*
+    ---------------------------------------------------
+    ------------------ Skills Styles ------------------
+    ---------------------------------------------------
+*/
+
+#skills {
+    padding: 50px 15px;
+    text-align: center;
+    background-color: #f2f2f5;
+
+    h2 {
+        color: $heading;
+        margin-bottom: 50px;
+    }
+
+    ul {
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+        max-width: 800px;
+    }
+
+    li {
+        display: inline-block;
+        margin: 7px;
+        padding: 5px 10px;
+        color: $heading;
+        background: darken($project-color, 5%);
+        list-style: none;
+        cursor: default;
+        font-size: 1.2em;
+    }
+}
+
+/*
+    ---------------------------------------------------
+    ----------------- Contact Styles ------------------
+    ---------------------------------------------------
+*/
+
+#contact {
+    padding: 50px 15px;
+    background: rgba(29, 64, 88, .8);
+    text-align: center;
+
+    h2 {
+        margin: 0 0 15px 0;
+        color: #fff;
+        font-weight: 500;
+    }
+}
+
+#contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+
+    input, textarea {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        border: none;
+        margin-bottom: 10px;
+        background: darken($base-color, 15%);
+        color: #fff;
+        @include transition();
+        @include placeholder();
+
+        &:focus {
+            outline: none;
+            background: darken($base-color, 25%);
+        }
+    }
+
+    textarea {
+        height: 150px;
+        resize: none;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        background: #fff;
+        border-radius: 4px;
+        padding: 5px 10px;
+        border: none;
+        color: $base-color;
+        font-weight: 700;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        @include transition();
+
+        &:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+    }
+}
+
+/*
+    ---------------------------------------------------
+    ------------------ Media Queries ------------------
+    ---------------------------------------------------
+*/
+
+// Medium Devices
+@media only screen and (max-width : 992px) {
+
+    #lead {
+        height: auto;
+        min-height: auto;
+        max-height: auto;
+        padding: 100px 15px;
+    }
+
+    #lead-content {
+        position: relative;
+        transform: none;
+        left: auto;
+        top: auto;
+
+        h1 {
+            font-size: 3em;
+        }
+
+        h2 {
+            font-size: 1.75em;
+        }
+    }
+
+    #about {
+        text-align: center;
+
+        p {
+            text-align: left;
+        }
+    }
+}
+
+// Small Devices
+@media only screen and (max-width : 768px) {
+
+    header {
+        position: fixed;
+        display: none;
+        z-index: 999;
+        animation: none;
+        bottom: 0;
+        height: 100%;
+    }
+
+    #mobile-menu-open, #mobile-menu-close {
+        display: block;
+    }
+
+    #menu {
+        height: 100%;
+        overflow-y: auto;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
+
+        li {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    #lead-content {
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.3em;
+        }
+
+        a {
+            padding: 10px 20px;
+        }
+    }
+
+    #lead-down {
+        display: none;
+    }
+
+    .education-block {
+        h3, span {
+            float: none;
+        }
+    }
+
+    .project-image {
+        display: none;
+    }
+
+    .project-info {
+        position: relative;
+        margin: 0;
+        padding: 30px 15px;
+        top: auto;
+        transform: none;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    .social {
+        text-align: center;
+    }
+}
+
+// Extra Small Devices
+@media only screen and (max-width : 480px) {
+
+    #lead-content {
+        h1 {
+            font-size: 1.5em;
+        }
+
+        h2 {
+            font-size: 1em;
+        }
+
+        a {
+            font-size: 0.9em;
+            padding: 5px 10px;
+        }
+    }
+}
